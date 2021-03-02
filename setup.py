@@ -1,37 +1,34 @@
 #!/usr/bin/env python3
 # -*- encoding: utf-8 -*-
 
-import io
-import re
 from glob import glob
-from os.path import basename
-from os.path import dirname
-from os.path import join
-from os.path import splitext
+import io
+from os.path import basename, dirname, join, splitext
+import re
 
-from setuptools import find_packages
-from setuptools import setup
+from setuptools import find_packages, setup
 
 
 def read(*names, **kwargs):
-    return io.open(join(dirname(__file__), *names), encoding=kwargs.get('encoding', 'utf8')).read()
+    return io.open(join(dirname(__file__), *names), encoding=kwargs.get("encoding", "utf8")).read()
 
 
-NAME = "nameless"
+NAME = "flasky"
 VERSION = "0.0.1"
 LICENSE = "MIT"
 DESCRIPTION = "Some description."
 README_FILE = "README.rst"
 CHANGELOG_FILE = "CHANGELOG.rst"
-LONG_DESCRIPTION = '%s\n%s' % (
-    re.compile('^.. start-badges.*^.. end-badges', re.M | re.S).sub('', read(f"{README_FILE}")),
-    re.sub(':[a-z]+:`~?(.*?)`', r'``\1``', read(f"{CHANGELOG_FILE}")))
+LONG_DESCRIPTION = "%s\n%s" % (
+    re.compile("^.. start-badges.*^.. end-badges", re.M | re.S).sub("", read(f"{README_FILE}")),
+    re.sub(":[a-z]+:`~?(.*?)`", r"``\1``", read(f"{CHANGELOG_FILE}")),
+)
 AUTHOR = "Mario Mendes"
 AUTHOR_EMAIL = "mario@example.com"
 URL = f"http://github.com/memjr/{NAME}"
-PACKAGES = find_packages('src')
-PACKAGE_DIR = {'': 'src'}
-PY_MODULES = [splitext(basename(path))[0] for path in glob('src/*.py')]
+PACKAGES = find_packages("src")
+PACKAGE_DIR = {"": "src"}
+PY_MODULES = [splitext(basename(path))[0] for path in glob("src/*.py")]
 INCLUDE_PACKAGE_DATA = True
 ZIP_SAFE = False
 CLASSIFIERS = [
@@ -67,11 +64,16 @@ EXTRAS_REQUIRE = {
     "dev": [
         "black",
         "flake8",
+        "isort",
+        "mypy",
+        "pep8-naming",
+        "pip-tools",
         "pre-commit",
         "pydocstyle",
         "pytest",
         "pytest-black",
         "pytest-clarity",
+        "pytest-cov",
         "pytest-dotenv",
         "pytest-flake8",
         "pytest-flask",
