@@ -13,6 +13,7 @@ init:
 	pip install --upgrade pip setuptools wheel
 	pip install pip-tools
 	rm -rf .tox
+	echo "{\"extends\": \"stylelint-config-standard\"}" > ./stylelintrc.json
 
 update:  init update-deps install_dev
 

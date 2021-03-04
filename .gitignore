@@ -1,5 +1,9 @@
 ### Python template
 
+# This file allows PyCharm to do JavaScript linting, which we don't want in our project, but it is useful when opening
+# an .html file in pycharm and shut it up about linting not being setup.
+stylelintrc.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
