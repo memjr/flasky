@@ -48,7 +48,7 @@ flake8==3.8.4
     #   pytest-flake8
 flask==1.1.2
     # via pytest-flask
-identify==2.0.0
+identify==2.1.0
     # via pre-commit
 idna==2.10
     # via requests
@@ -173,7 +173,7 @@ toml==0.10.2
     #   pytest
     #   pytest-black
     #   tox
-tox==3.22.0
+tox==3.23.0
     # via -r dev-requirements.in
 typed-ast==1.4.2
     # via
